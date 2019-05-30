@@ -64,3 +64,8 @@ query_templates_modify目录为修改的sql语句,适配Spark
 
 原项目为 https://github.com/cloudera/impala-tpcds-kit
 本项目只为方便在Spark端测试，如有侵权，立刻删除。
+
+
+
+Error in query: org.apache.hadoop.hive.ql.metadata.HiveException: Number of dynamic partitions created is 2004, which is more than 2000. To solve this try to set hive.exec.max.dynamic.partitions to at least 2004.;
+19/05/30 12:09:27 INFO [Thread-2] SparkUI: Stopped Spark web UI at http://BJHTYD-Hope-46-229.hadoop.jd.local:4041 
