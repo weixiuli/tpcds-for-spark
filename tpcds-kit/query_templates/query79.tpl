@@ -38,7 +38,7 @@
  define _LIMIT=100;
  
  [_LIMITA] select [_LIMITB]
-  c_last_name,c_first_name,substr(s_city,1,30),ss_ticket_number,amt,profit
+  c_last_name,c_first_name,substr(s_city,1,30) as s_city,ss_ticket_number,amt,profit
   from
    (select ss_ticket_number
           ,ss_customer_sk

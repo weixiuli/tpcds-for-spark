@@ -6,7 +6,7 @@ set hive.exec.dynamic.partition=true;
 set hive.exec.dynamic.partition.mode=nonstrict;
 
 set hive.exec.max.dynamic.partitions.pernode=2000;
-set hive.exec.max.dynamic.partitions=2000;
+set hive.exec.max.dynamic.partitions=50000;
 
 set spark.sql.parquet.compression.codec=gzip;
 -- set mapreduce.job.maps=500;

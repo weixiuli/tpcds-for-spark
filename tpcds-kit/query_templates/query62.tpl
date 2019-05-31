@@ -37,7 +37,7 @@ define DMS = random(1176,1224,uniform);
 define _LIMIT=100;
 
 [_LIMITA] select [_LIMITB] 
-   substr(w_warehouse_name,1,20)
+   substr(w_warehouse_name,1,20) as w_warehouse_name
   ,sm_type
   ,web_name
   ,sum(case when (ws_ship_date_sk - ws_sold_date_sk <= 30 ) then 1 else 0 end)  as 30days 
