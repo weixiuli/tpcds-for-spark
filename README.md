@@ -75,11 +75,11 @@ partitioned by (timesnum int, factor string, querynum string, runstyle string, d
 stored as parquet;
 ```
 - 注意分区设置
-- # 0、timesnum：运行num
-- # 1、factor：数据放大倍数(基准1G)；
-- # 2、querynum：sql编号(1~99)
-- # 3、runstyle：AE/No_Ae
-- # 4、dt：date
+- 0、timesnum：运行num
+- 1、factor：数据放大倍数(基准1G)；
+- 2、querynum：sql编号(1~99)
+- 3、runstyle：AE/No_Ae
+- 4、dt：date
 
 ## 9. spark-sql Ae/No-Ae双跑测试(两种模式可以并行)
 
