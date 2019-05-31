@@ -1,11 +1,11 @@
 #!/bin/bash
 bin=`dirname $0`
 bin=`cd $bin;pwd`
-
-source tpcds-env.sh
 # AE or No_AE
-#export RUN_STYLE=AE
-export RUN_STYLE='No_AE'
+export RUN_STYLE='AE'
+#export RUN_STYLE=No_AE
+source tpcds-env.sh
+
 
 if [ ! -d $QUERY_SQL_DIR ];then
         echo "query sql is not exist,exit.."
@@ -93,12 +93,13 @@ do
 
 	sysout="$QUERY_SQL_DIR_NEW/query${i}_$times.out"
 
-	if [ "$runstyle" = 'AE' ];then
+    if [ "$runstyle" = 'AE' ];then
 	   $SPARK_HOME/bin/spark-sql --database $TPCDS_DBNAME --name "${file}_select_use_$times" --conf spark.sql.adaptive.enabled=true -f "$file" --silent > $sysout 2>&1
 	else
  	   $SPARK_HOME/bin/spark-sql --database $TPCDS_DBNAME --name "${file}_select_use_$times" -f "$file" --silent > $sysout 2>&1
 
 	fi
+
     time=`cat $sysout | grep "Time taken:" | grep "Driver" | awk -F 'Time taken:' '{print $2}' | awk -F ' ' '{print $1}' | tail -n 1`
 
     sqlTest="
